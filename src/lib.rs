@@ -45,6 +45,9 @@
 
 #![warn(missing_docs)]
 
+/// A C-compatible foreign function interface.
+pub mod ffi;
+
 use std::fmt;
 use std::fs;
 use std::io::{self, Read, Seek, SeekFrom, Write};
