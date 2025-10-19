@@ -20,7 +20,7 @@ cargo run --example cfbtool -- --help
 # Create test file
 cargo run --example create_test_cfb
 
-# List contents
+# List contents (ensure a test.cfb exists; if using the host crate run `cargo run --example create_test_cfb` first)
 cargo run --example cfbtool -- ls --long test.cfb:
 
 # Read stream
@@ -32,7 +32,7 @@ cargo run --example cfbtool -- create --file-path test.cfb --inner-path TestStor
 
 ## Related Projects
 
-- **C++ Wrapper**: https://github.com/mmhliton/cfbcpp.git
+- **C++ Wrapper / Host crate**: https://github.com/mmhliton/cfbcpp.git (contains a slim Rust host `cfbtool_host` depending on upstream crate for examples)
 - **Complete Guide**: See [CFB_PROJECT_GUIDE.md](CFB_PROJECT_GUIDE.md)
 
 ## CFB File Format
