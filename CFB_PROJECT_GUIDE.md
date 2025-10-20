@@ -260,6 +260,84 @@ cargo run --example cfbtool -- ls --all test.cfb:
 #     NewTestStream
 ```
 
+### Recursive Traversal & Timing (`traverse_cfb` example)
+
+The `traverse_cfb` example provides a fast, read-only recursive walk of every storage and optionally every stream in a compound file. It is useful for:
+
+- Getting a full hierarchical overview (including nested storages)
+- Previewing the first bytes of each stream (hex + text) for quick identification
+- Measuring how long a traversal of a given file takes (printed at the end)
+- Performing a lightweight structural scan without stream content output (for speed)
+
+#### Features
+
+- Depth-first traversal of all storages starting at the root
+- Optional stream preview printing (size + first up to 64 bytes hex and ASCII)
+- Graceful warnings on inaccessible entries
+- Execution time measurement using `std::time::Instant`
+
+#### Running the example
+
+Usage:
+```bash
+cargo run --example traverse_cfb -- <file> [print-streams=true|false]
+```
+
+Examples:
+```bash
+# Full traversal with stream previews (default)
+cargo run --example traverse_cfb -- test.cfb
+
+# Explicitly show streams
+cargo run --example traverse_cfb -- test.cfb true
+
+# Suppress stream previews (faster, only storages shown)
+cargo run --example traverse_cfb -- test.cfb false
+```
+
+#### Sample output (with printing enabled)
+
+```
+Traversing compound file: test.cfb
+📁 .(root)
+  📄 RootStream (len=43 bytes)
+     hex: 54 68 69 73 20 69 73 20 61 20 72 6f 6f 74 20 6c
+     txt: This is a root level stream with test data.
+  📁 TestStorage
+    📄 TestStream (len=58 bytes)
+       hex: 48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21 20 54 68
+       txt: Hello, World! This is test data in a compound file stream.
+Traversal completed in 0.000193s
+```
+
+#### Sample output (printing disabled)
+```
+Traversing compound file: test.cfb
+📁 .(root)
+  📁 TestStorage
+Traversal completed in 0.000053s
+```
+
+Timing appears in Rust's debug `Duration` format. For very large files (GB-scale) piping to a pager helps:
+
+```bash
+cargo run --example traverse_cfb -- large_test_1gb.cfb false | less
+```
+
+#### Exit codes
+
+- `0` on successful traversal
+- `1` if the file path is missing or cannot be opened
+
+#### Future enhancements (ideas)
+
+- Optional JSON export (`--json`) of hierarchy and per-stream metadata
+- Depth limiting (`--max-depth N`) for shallow scans
+- Stream dumping (`--dump <path>` or `--grep <pattern>`) for targeted extraction
+- Per-storage timing metrics for performance profiling
+
+This example complements `cfbtool` by offering a quick hierarchical scan focused on inspection, performance measurement, and now selective stream output.
+
 ### Understanding CFB File Format
 
 CFB files use a hierarchical structure:
