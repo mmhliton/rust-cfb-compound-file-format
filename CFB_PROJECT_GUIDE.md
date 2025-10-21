@@ -2,19 +2,15 @@
 
 ## Overview
 
-This guide documents the complete setup, compilation, and usage of two related projects for working with Microsoft Compound File Binary format files:
+This guide documents the setup, compilation, and usage of the Rust library for working with Microsoft Compound File Binary format files.
 
-1. **rust-cfb-compound-file-format**: A Rust library for reading/writing CFB files
-2. **cfbcpp**: A C++ wrapper and tools for the Rust CFB library
-
-Both projects have been successfully ported to Linux and are available on GitHub.
+Looking for the C++ tooling / wrapper documentation? See the dedicated C++ guide in the `rust-cpp-cfb/CompoundFile/README.md` (or the `cfbcpp` repository README). The remainder of this document now focuses exclusively on the Rust implementation.
 
 ## Table of Contents
 
 - [Project Structure](#project-structure)
 - [Installation & Setup](#installation--setup)
 - [Rust CFB Library](#rust-cfb-library)
-- [C++ CFB Tools](#c-cfb-tools)
 - [cfbtool Usage Guide](#cfbtool-usage-guide)
 - [GitHub Repositories](#github-repositories)
 - [Development Workflow](#development-workflow)
@@ -37,18 +33,6 @@ rust-cfb-compound-file-format/
 └── target/                   # Compiled artifacts
 ```
 
-### cfbcpp
-```
-cfbcpp/
-├── CMakeLists.txt            # CMake build configuration
-├── include/
-│   ├── cfb_wrapper.h         # C++ wrapper header
-│   └── cfb.h                 # CFB library header
-├── src/
-│   ├── cfb_wrapper.cpp       # C++ wrapper implementation
-│   └── cfbtool_cpp.cpp       # C++ version of cfbtool
-└── build/                    # Build artifacts
-```
 
 ## Installation & Setup
 
@@ -112,36 +96,10 @@ The library is configured in `Cargo.toml` to produce both Rust library and C-com
 crate-type = ["rlib", "staticlib"]
 ```
 
-## C++ CFB Tools
-
-### Building the C++ Project
-
-```bash
-cd cfbcpp
-
-# Create build directory
-mkdir -p build
-cd build
-
-# Configure with CMake
-cmake ..
-
-# Build the project
-make
-
-# The executable will be created as 'cfbtool_cpp'
-```
-
-### C++ Project Features
-
-- **CFB file reading**: Access compound files from C++
-- **Cross-platform compatibility**: Linux-compatible implementation
-- **OpenSSL integration**: Uses OpenSSL for cryptographic functions
-- **File I/O operations**: Custom Linux file I/O implementation
 
 ## cfbtool Usage Guide
 
-The `cfbtool` is a command-line utility for working with CFB files. It's available in both Rust and C++ versions.
+The `cfbtool` is a command-line utility for working with CFB files (Rust version documented here). A separate C++ variant exists; refer to the C++ guide for its usage.
 
 ### Running cfbtool (Rust version)
 
@@ -338,6 +296,7 @@ cargo run --example traverse_cfb -- large_test_1gb.cfb false | less
 
 This example complements `cfbtool` by offering a quick hierarchical scan focused on inspection, performance measurement, and now selective stream output.
 
+
 ### Understanding CFB File Format
 
 CFB files use a hierarchical structure:
@@ -365,7 +324,6 @@ When using the `create` command, data is stored in little-endian binary format:
 Both projects are hosted on GitHub under the `mmhliton` account:
 
 - **Rust CFB**: https://github.com/mmhliton/rust-cfb-compound-file-format.git
-- **C++ CFB**: https://github.com/mmhliton/cfbcpp.git
 
 ### Git Configuration
 
@@ -402,26 +360,6 @@ git commit -m "Your commit message"
 git push origin master
 ```
 
-### Making Changes to C++ Project
-
-```bash
-cd cfbcpp
-
-# Make your changes
-# ...
-
-# Rebuild
-cd build
-make
-
-# Test the executable
-./cfbtool_cpp
-
-# Commit and push
-git add .
-git commit -m "Your commit message"
-git push origin master
-```
 
 ### Adding New Features
 
@@ -556,7 +494,6 @@ int main() {
 ### Code Style
 
 - **Rust**: Follow standard Rust formatting (`cargo fmt`)
-- **C++**: Follow project conventions (see existing code)
 - **Documentation**: Update this guide for significant changes
 - **Testing**: Add tests for new functionality
 

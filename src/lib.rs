@@ -48,6 +48,10 @@
 /// A C-compatible foreign function interface.
 pub mod ffi;
 
+/// Extended C foreign function interface with comprehensive CFB operations.
+/// This module contains the actual C FFI implementations used by C++ wrappers.
+pub mod cffi;
+
 use std::fmt;
 use std::fs;
 use std::io::{self, Read, Seek, SeekFrom, Write};

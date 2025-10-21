@@ -1,0 +1,78 @@
+nohup: ignoring input
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/examples/create_large_cfb_v2 20`
+Creating large CFB file (20 GB) with random structure...
+Output file: large_test_20gb.cfb
+Phase 1: Creating storage hierarchy...
+Created 248 storages
+Phase 2: Creating streams with data...
+Progress: 0.1% - Created 18 streams, Size: 0.03 GB
+Progress: 0.9% - Created 38 streams, Size: 0.19 GB
+Progress: 1.0% - Created 56 streams, Size: 0.21 GB
+Progress: 1.2% - Created 75 streams, Size: 0.24 GB
+Progress: 1.3% - Created 92 streams, Size: 0.25 GB
+Progress: 1.5% - Created 112 streams, Size: 0.29 GB
+Progress: 2.2% - Created 132 streams, Size: 0.44 GB
+Progress: 2.5% - Created 150 streams, Size: 0.50 GB
+Progress: 2.9% - Created 169 streams, Size: 0.57 GB
+Progress: 3.1% - Created 188 streams, Size: 0.62 GB
+Progress: 3.4% - Created 206 streams, Size: 0.67 GB
+Progress: 3.9% - Created 226 streams, Size: 0.77 GB
+Progress: 4.4% - Created 244 streams, Size: 0.89 GB
+Progress: 4.9% - Created 263 streams, Size: 0.99 GB
+Progress: 5.0% - Created 282 streams, Size: 1.01 GB
+Progress: 5.2% - Created 301 streams, Size: 1.04 GB
+Progress: 5.4% - Created 320 streams, Size: 1.07 GB
+Progress: 5.6% - Created 339 streams, Size: 1.12 GB
+Progress: 5.9% - Created 359 streams, Size: 1.17 GB
+Progress: 6.1% - Created 379 streams, Size: 1.21 GB
+Progress: 6.7% - Created 399 streams, Size: 1.33 GB
+Progress: 6.8% - Created 419 streams, Size: 1.36 GB
+Progress: 7.0% - Created 439 streams, Size: 1.39 GB
+Progress: 7.2% - Created 459 streams, Size: 1.45 GB
+Progress: 7.7% - Created 479 streams, Size: 1.55 GB
+Progress: 8.0% - Created 499 streams, Size: 1.61 GB
+Progress: 8.3% - Created 519 streams, Size: 1.66 GB
+Progress: 8.9% - Created 539 streams, Size: 1.77 GB
+Progress: 9.6% - Created 559 streams, Size: 1.91 GB
+Progress: 10.0% - Created 578 streams, Size: 2.01 GB
+Progress: 10.4% - Created 597 streams, Size: 2.08 GB
+Progress: 10.6% - Created 616 streams, Size: 2.12 GB
+Progress: 10.9% - Created 636 streams, Size: 2.18 GB
+Progress: 11.2% - Created 656 streams, Size: 2.24 GB
+Progress: 11.9% - Created 675 streams, Size: 2.38 GB
+Progress: 12.3% - Created 695 streams, Size: 2.45 GB
+Progress: 12.6% - Created 715 streams, Size: 2.52 GB
+Progress: 12.9% - Created 735 streams, Size: 2.59 GB
+Progress: 13.3% - Created 755 streams, Size: 2.66 GB
+Progress: 13.6% - Created 775 streams, Size: 2.73 GB
+Progress: 14.2% - Created 795 streams, Size: 2.84 GB
+Progress: 14.5% - Created 814 streams, Size: 2.90 GB
+Progress: 14.9% - Created 834 streams, Size: 2.98 GB
+Progress: 15.3% - Created 853 streams, Size: 3.06 GB
+Progress: 15.7% - Created 873 streams, Size: 3.14 GB
+Progress: 16.2% - Created 893 streams, Size: 3.25 GB
+Progress: 16.4% - Created 913 streams, Size: 3.27 GB
+Progress: 16.9% - Created 933 streams, Size: 3.38 GB
+Progress: 17.2% - Created 952 streams, Size: 3.44 GB
+Progress: 17.6% - Created 971 streams, Size: 3.53 GB
+Progress: 18.2% - Created 990 streams, Size: 3.65 GB
+Progress: 18.5% - Created 1010 streams, Size: 3.70 GB
+Progress: 18.6% - Created 1029 streams, Size: 3.71 GB
+Progress: 18.9% - Created 1048 streams, Size: 3.77 GB
+Progress: 19.1% - Created 1068 streams, Size: 3.83 GB
+Progress: 19.6% - Created 1086 streams, Size: 3.93 GB
+Progress: 19.8% - Created 1106 streams, Size: 3.95 GB
+Progress: 20.0% - Created 1126 streams, Size: 4.00 GB
+Progress: 20.2% - Created 1146 streams, Size: 4.04 GB
+Progress: 20.7% - Created 1166 streams, Size: 4.13 GB
+Progress: 21.2% - Created 1186 streams, Size: 4.25 GB
+Progress: 21.8% - Created 1206 streams, Size: 4.35 GB
+Progress: 22.0% - Created 1226 streams, Size: 4.40 GB
+Progress: 22.4% - Created 1246 streams, Size: 4.49 GB
+Progress: 22.8% - Created 1266 streams, Size: 4.57 GB
+Progress: 23.4% - Created 1286 streams, Size: 4.67 GB
+Progress: 23.8% - Created 1305 streams, Size: 4.75 GB
+Progress: 24.0% - Created 1325 streams, Size: 4.80 GB
+Progress: 24.4% - Created 1345 streams, Size: 4.88 GB
+Progress: 24.5% - Created 1365 streams, Size: 4.90 GB

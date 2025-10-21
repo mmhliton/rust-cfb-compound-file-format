@@ -60,8 +60,8 @@ pub unsafe extern "C" fn cfb_close(comp: *mut CfbCompoundFile) {
 #[no_mangle]
 pub unsafe extern "C" fn cfb_list_entries(
     comp: *mut CfbCompoundFile,
-    callback: extern "C" fn(*const c_char, c_int, usize, *mut std::ffi::c_void),
-    user_data: *mut std::ffi::c_void,
+    _path: *const c_char,
+    callback: extern "C" fn(*const c_char),
 ) -> c_int {
     if comp.is_null() {
         return -1;
@@ -74,9 +74,7 @@ pub unsafe extern "C" fn cfb_list_entries(
     for entry in entries {
         let path_string = entry.path().to_string_lossy();
         if let Ok(name) = CString::new(path_string.as_ref()) {
-            let is_stream = if entry.is_stream() { 1 } else { 0 };
-            let size = if entry.is_stream() { entry.len() as usize } else { 0 };
-            callback(name.as_ptr(), is_stream, size, user_data);
+            callback(name.as_ptr());
         }
     }
     0
