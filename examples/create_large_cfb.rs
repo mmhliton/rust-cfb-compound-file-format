@@ -1,6 +1,4 @@
 use std::io::{Cursor, Write};
-use std::fs::File;
-use std::path::Path;
 use rand::prelude::*;
 use rand::distributions::Alphanumeric;
 
