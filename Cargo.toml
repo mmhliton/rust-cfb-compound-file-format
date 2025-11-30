@@ -22,3 +22,19 @@ time = "0.3"
 
 [lib]
 crate-type = ["rlib", "staticlib"]
+
+[[example]]
+name = "create_1gb_cfb"
+path = "examples/create_1gb_cfb.rs"
+
+[[example]]
+name = "modify_streams"
+path = "examples/modify_streams.rs"
+
+[[example]]
+name = "traverse_streams"
+path = "examples/traverse_streams.rs"
+
+[[example]]
+name = "create_test_simple"
+path = "examples/create_test_simple.rs"
